@@ -1,0 +1,506 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		24416B8111C4CA220047AFDD /* Build & Test */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 24416B8A11C4CA520047AFDD /* Build configuration list for PBXAggregateTarget "Build & Test" */;
+			buildPhases = (
+				24416B8011C4CA220047AFDD /* ShellScript */,
+			);
+			dependencies = (
+				24416B8511C4CA280047AFDD /* PBXTargetDependency */,
+			);
+			name = "Build & Test";
+			productName = "Build & test";
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		24DD6CF91134B3F500162E58 /* CoUkDevpulseAdobemarketingcloudModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 24DD6CF71134B3F500162E58 /* CoUkDevpulseAdobemarketingcloudModule.h */; };
+		24DD6CFA1134B3F500162E58 /* CoUkDevpulseAdobemarketingcloudModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DD6CF81134B3F500162E58 /* CoUkDevpulseAdobemarketingcloudModule.m */; };
+		24DE9E1111C5FE74003F90F6 /* CoUkDevpulseAdobemarketingcloudModuleAssets.h in Headers */ = {isa = PBXBuildFile; fileRef = 24DE9E0F11C5FE74003F90F6 /* CoUkDevpulseAdobemarketingcloudModuleAssets.h */; };
+		24DE9E1211C5FE74003F90F6 /* CoUkDevpulseAdobemarketingcloudModuleAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DE9E1011C5FE74003F90F6 /* CoUkDevpulseAdobemarketingcloudModuleAssets.m */; };
+		65997BD71EAF506400F578F3 /* ADBMobile.h in Headers */ = {isa = PBXBuildFile; fileRef = 65997BD11EAF506400F578F3 /* ADBMobile.h */; };
+		65997BD81EAF506400F578F3 /* AdobeMobileLibrary_Extension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65997BD31EAF506400F578F3 /* AdobeMobileLibrary_Extension.a */; };
+		65997BD91EAF506400F578F3 /* AdobeMobileLibrary_TV.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65997BD41EAF506400F578F3 /* AdobeMobileLibrary_TV.a */; };
+		65997BDA1EAF506400F578F3 /* AdobeMobileLibrary_Watch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65997BD51EAF506400F578F3 /* AdobeMobileLibrary_Watch.a */; };
+		65997BDB1EAF506400F578F3 /* AdobeMobileLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65997BD61EAF506400F578F3 /* AdobeMobileLibrary.a */; };
+		65A027271EBC750E002667AF /* EnumHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A027261EBC750E002667AF /* EnumHelper.m */; };
+		65A027291EBC7525002667AF /* EnumHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 65A027281EBC7523002667AF /* EnumHelper.h */; };
+		65C89A5F1EB9C6C1000C4360 /* CoUkDevpulseAdobemarketingcloudMediaHeartbeatProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 65C89A5D1EB9C6C1000C4360 /* CoUkDevpulseAdobemarketingcloudMediaHeartbeatProxy.h */; };
+		65C89A601EB9C6C1000C4360 /* CoUkDevpulseAdobemarketingcloudMediaHeartbeatProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C89A5E1EB9C6C1000C4360 /* CoUkDevpulseAdobemarketingcloudMediaHeartbeatProxy.m */; };
+		65C89A651EB9C7FF000C4360 /* VideoHeartbeat_TV.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65C89A631EB9C7FF000C4360 /* VideoHeartbeat_TV.a */; };
+		65C89A661EB9C7FF000C4360 /* VideoHeartbeat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65C89A641EB9C7FF000C4360 /* VideoHeartbeat.a */; };
+		65C89A6A1EB9C808000C4360 /* ADBMediaHeartbeat.h in Headers */ = {isa = PBXBuildFile; fileRef = 65C89A671EB9C808000C4360 /* ADBMediaHeartbeat.h */; };
+		65C89A6B1EB9C808000C4360 /* ADBMediaHeartbeatConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 65C89A681EB9C808000C4360 /* ADBMediaHeartbeatConfig.h */; };
+		65C89A6C1EB9C808000C4360 /* ADBStandardMetadataKeys.h in Headers */ = {isa = PBXBuildFile; fileRef = 65C89A691EB9C808000C4360 /* ADBStandardMetadataKeys.h */; };
+		65C89A6F1EB9D899000C4360 /* VideoAnalyticsProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 65C89A6D1EB9D899000C4360 /* VideoAnalyticsProvider.h */; };
+		65C89A701EB9D899000C4360 /* VideoAnalyticsProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C89A6E1EB9D899000C4360 /* VideoAnalyticsProvider.m */; };
+		AA747D9F0F9514B9006C5449 /* CoUkDevpulseAdobemarketingcloud_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* CoUkDevpulseAdobemarketingcloud_Prefix.pch */; };
+		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		24416B8411C4CA280047AFDD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = AdobeMarketingCloud;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		24DD6CF71134B3F500162E58 /* CoUkDevpulseAdobemarketingcloudModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoUkDevpulseAdobemarketingcloudModule.h; path = Classes/CoUkDevpulseAdobemarketingcloudModule.h; sourceTree = "<group>"; };
+		24DD6CF81134B3F500162E58 /* CoUkDevpulseAdobemarketingcloudModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoUkDevpulseAdobemarketingcloudModule.m; path = Classes/CoUkDevpulseAdobemarketingcloudModule.m; sourceTree = "<group>"; };
+		24DD6D1B1134B66800162E58 /* titanium.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = titanium.xcconfig; sourceTree = "<group>"; };
+		24DE9E0F11C5FE74003F90F6 /* CoUkDevpulseAdobemarketingcloudModuleAssets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoUkDevpulseAdobemarketingcloudModuleAssets.h; path = Classes/CoUkDevpulseAdobemarketingcloudModuleAssets.h; sourceTree = "<group>"; };
+		24DE9E1011C5FE74003F90F6 /* CoUkDevpulseAdobemarketingcloudModuleAssets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoUkDevpulseAdobemarketingcloudModuleAssets.m; path = Classes/CoUkDevpulseAdobemarketingcloudModuleAssets.m; sourceTree = "<group>"; };
+		65997BD11EAF506400F578F3 /* ADBMobile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ADBMobile.h; path = platform/ADBMobile.h; sourceTree = "<group>"; };
+		65997BD31EAF506400F578F3 /* AdobeMobileLibrary_Extension.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = AdobeMobileLibrary_Extension.a; path = platform/AdobeMobileLibrary_Extension.a; sourceTree = "<group>"; };
+		65997BD41EAF506400F578F3 /* AdobeMobileLibrary_TV.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = AdobeMobileLibrary_TV.a; path = platform/AdobeMobileLibrary_TV.a; sourceTree = "<group>"; };
+		65997BD51EAF506400F578F3 /* AdobeMobileLibrary_Watch.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = AdobeMobileLibrary_Watch.a; path = platform/AdobeMobileLibrary_Watch.a; sourceTree = "<group>"; };
+		65997BD61EAF506400F578F3 /* AdobeMobileLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = AdobeMobileLibrary.a; path = platform/AdobeMobileLibrary.a; sourceTree = "<group>"; };
+		65A027261EBC750E002667AF /* EnumHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EnumHelper.m; path = Classes/EnumHelper.m; sourceTree = "<group>"; };
+		65A027281EBC7523002667AF /* EnumHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EnumHelper.h; path = Classes/EnumHelper.h; sourceTree = "<group>"; };
+		65C89A5D1EB9C6C1000C4360 /* CoUkDevpulseAdobemarketingcloudMediaHeartbeatProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoUkDevpulseAdobemarketingcloudMediaHeartbeatProxy.h; path = Classes/CoUkDevpulseAdobemarketingcloudMediaHeartbeatProxy.h; sourceTree = "<group>"; };
+		65C89A5E1EB9C6C1000C4360 /* CoUkDevpulseAdobemarketingcloudMediaHeartbeatProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoUkDevpulseAdobemarketingcloudMediaHeartbeatProxy.m; path = Classes/CoUkDevpulseAdobemarketingcloudMediaHeartbeatProxy.m; sourceTree = "<group>"; };
+		65C89A631EB9C7FF000C4360 /* VideoHeartbeat_TV.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = VideoHeartbeat_TV.a; path = platform/VideoHeartbeat_TV.a; sourceTree = "<group>"; };
+		65C89A641EB9C7FF000C4360 /* VideoHeartbeat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = VideoHeartbeat.a; path = platform/VideoHeartbeat.a; sourceTree = "<group>"; };
+		65C89A671EB9C808000C4360 /* ADBMediaHeartbeat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ADBMediaHeartbeat.h; path = platform/ADBMediaHeartbeat.h; sourceTree = "<group>"; };
+		65C89A681EB9C808000C4360 /* ADBMediaHeartbeatConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ADBMediaHeartbeatConfig.h; path = platform/ADBMediaHeartbeatConfig.h; sourceTree = "<group>"; };
+		65C89A691EB9C808000C4360 /* ADBStandardMetadataKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ADBStandardMetadataKeys.h; path = platform/ADBStandardMetadataKeys.h; sourceTree = "<group>"; };
+		65C89A6D1EB9D899000C4360 /* VideoAnalyticsProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoAnalyticsProvider.h; path = Classes/VideoAnalyticsProvider.h; sourceTree = "<group>"; };
+		65C89A6E1EB9D899000C4360 /* VideoAnalyticsProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VideoAnalyticsProvider.m; path = Classes/VideoAnalyticsProvider.m; sourceTree = "<group>"; };
+		AA747D9E0F9514B9006C5449 /* CoUkDevpulseAdobemarketingcloud_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoUkDevpulseAdobemarketingcloud_Prefix.pch; sourceTree = SOURCE_ROOT; };
+		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D2AAC07E0554694100DB518D /* libco.uk.devpulse.adobemarketingcloud.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libco.uk.devpulse.adobemarketingcloud.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D2AAC07C0554694100DB518D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65997BD91EAF506400F578F3 /* AdobeMobileLibrary_TV.a in Frameworks */,
+				AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */,
+				65997BD81EAF506400F578F3 /* AdobeMobileLibrary_Extension.a in Frameworks */,
+				65997BDA1EAF506400F578F3 /* AdobeMobileLibrary_Watch.a in Frameworks */,
+				65C89A651EB9C7FF000C4360 /* VideoHeartbeat_TV.a in Frameworks */,
+				65997BDB1EAF506400F578F3 /* AdobeMobileLibrary.a in Frameworks */,
+				65C89A661EB9C7FF000C4360 /* VideoHeartbeat.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		034768DFFF38A50411DB9C8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D2AAC07E0554694100DB518D /* libco.uk.devpulse.adobemarketingcloud.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0867D691FE84028FC02AAC07 /* AdobeMarketingCloud */ = {
+			isa = PBXGroup;
+			children = (
+				65997BDC1EAF507200F578F3 /* Lib */,
+				08FB77AEFE84172EC02AAC07 /* Classes */,
+				32C88DFF0371C24200C91783 /* Other Sources */,
+				0867D69AFE84028FC02AAC07 /* Frameworks */,
+				034768DFFF38A50411DB9C8B /* Products */,
+			);
+			name = AdobeMarketingCloud;
+			sourceTree = "<group>";
+		};
+		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AACBBE490F95108600F1A2B1 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		08FB77AEFE84172EC02AAC07 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				24DE9E0F11C5FE74003F90F6 /* CoUkDevpulseAdobemarketingcloudModuleAssets.h */,
+				24DE9E1011C5FE74003F90F6 /* CoUkDevpulseAdobemarketingcloudModuleAssets.m */,
+				24DD6CF71134B3F500162E58 /* CoUkDevpulseAdobemarketingcloudModule.h */,
+				24DD6CF81134B3F500162E58 /* CoUkDevpulseAdobemarketingcloudModule.m */,
+				65C89A5D1EB9C6C1000C4360 /* CoUkDevpulseAdobemarketingcloudMediaHeartbeatProxy.h */,
+				65C89A5E1EB9C6C1000C4360 /* CoUkDevpulseAdobemarketingcloudMediaHeartbeatProxy.m */,
+				65C89A6D1EB9D899000C4360 /* VideoAnalyticsProvider.h */,
+				65C89A6E1EB9D899000C4360 /* VideoAnalyticsProvider.m */,
+				65A027281EBC7523002667AF /* EnumHelper.h */,
+				65A027261EBC750E002667AF /* EnumHelper.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		32C88DFF0371C24200C91783 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				AA747D9E0F9514B9006C5449 /* CoUkDevpulseAdobemarketingcloud_Prefix.pch */,
+				24DD6D1B1134B66800162E58 /* titanium.xcconfig */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		65997BDC1EAF507200F578F3 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				65C89A621EB9C77E000C4360 /* Heartbeat */,
+				65C89A611EB9C770000C4360 /* AMC */,
+			);
+			name = Lib;
+			sourceTree = "<group>";
+		};
+		65C89A611EB9C770000C4360 /* AMC */ = {
+			isa = PBXGroup;
+			children = (
+				65997BD11EAF506400F578F3 /* ADBMobile.h */,
+				65997BD31EAF506400F578F3 /* AdobeMobileLibrary_Extension.a */,
+				65997BD41EAF506400F578F3 /* AdobeMobileLibrary_TV.a */,
+				65997BD51EAF506400F578F3 /* AdobeMobileLibrary_Watch.a */,
+				65997BD61EAF506400F578F3 /* AdobeMobileLibrary.a */,
+			);
+			name = AMC;
+			sourceTree = "<group>";
+		};
+		65C89A621EB9C77E000C4360 /* Heartbeat */ = {
+			isa = PBXGroup;
+			children = (
+				65C89A671EB9C808000C4360 /* ADBMediaHeartbeat.h */,
+				65C89A681EB9C808000C4360 /* ADBMediaHeartbeatConfig.h */,
+				65C89A691EB9C808000C4360 /* ADBStandardMetadataKeys.h */,
+				65C89A631EB9C7FF000C4360 /* VideoHeartbeat_TV.a */,
+				65C89A641EB9C7FF000C4360 /* VideoHeartbeat.a */,
+			);
+			name = Heartbeat;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D2AAC07A0554694100DB518D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65A027291EBC7525002667AF /* EnumHelper.h in Headers */,
+				65997BD71EAF506400F578F3 /* ADBMobile.h in Headers */,
+				65C89A5F1EB9C6C1000C4360 /* CoUkDevpulseAdobemarketingcloudMediaHeartbeatProxy.h in Headers */,
+				65C89A6A1EB9C808000C4360 /* ADBMediaHeartbeat.h in Headers */,
+				AA747D9F0F9514B9006C5449 /* CoUkDevpulseAdobemarketingcloud_Prefix.pch in Headers */,
+				65C89A6F1EB9D899000C4360 /* VideoAnalyticsProvider.h in Headers */,
+				65C89A6C1EB9C808000C4360 /* ADBStandardMetadataKeys.h in Headers */,
+				24DD6CF91134B3F500162E58 /* CoUkDevpulseAdobemarketingcloudModule.h in Headers */,
+				65C89A6B1EB9C808000C4360 /* ADBMediaHeartbeatConfig.h in Headers */,
+				24DE9E1111C5FE74003F90F6 /* CoUkDevpulseAdobemarketingcloudModuleAssets.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D2AAC07D0554694100DB518D /* AdobeMarketingCloud */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "AdobeMarketingCloud" */;
+			buildPhases = (
+				D2AAC07A0554694100DB518D /* Headers */,
+				D2AAC07B0554694100DB518D /* Sources */,
+				D2AAC07C0554694100DB518D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AdobeMarketingCloud;
+			productName = AdobeMarketingCloud;
+			productReference = D2AAC07E0554694100DB518D /* libco.uk.devpulse.adobemarketingcloud.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0867D690FE84028FC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+			};
+			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "AdobeMarketingCloud" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 0867D691FE84028FC02AAC07 /* AdobeMarketingCloud */;
+			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D2AAC07D0554694100DB518D /* AdobeMarketingCloud */,
+				24416B8111C4CA220047AFDD /* Build & Test */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		24416B8011C4CA220047AFDD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here\n\npython \"${TITANIUM_SDK}/titanium.py\" run --dir=\"${PROJECT_DIR}\"\nexit $?\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D2AAC07B0554694100DB518D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65A027271EBC750E002667AF /* EnumHelper.m in Sources */,
+				24DD6CFA1134B3F500162E58 /* CoUkDevpulseAdobemarketingcloudModule.m in Sources */,
+				65C89A701EB9D899000C4360 /* VideoAnalyticsProvider.m in Sources */,
+				24DE9E1211C5FE74003F90F6 /* CoUkDevpulseAdobemarketingcloudModuleAssets.m in Sources */,
+				65C89A601EB9C6C1000C4360 /* CoUkDevpulseAdobemarketingcloudMediaHeartbeatProxy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		24416B8511C4CA280047AFDD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D2AAC07D0554694100DB518D /* AdobeMarketingCloud */;
+			targetProxy = 24416B8411C4CA280047AFDD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB921F08733DC00010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DSTROOT = /tmp/CoUkDevpulseAdobemarketingcloud.dst;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = CoUkDevpulseAdobemarketingcloud_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "TI_VERSION=$(TI_VERSION)";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = NO;
+				GCC_WARN_MISSING_PARENTHESES = NO;
+				GCC_WARN_SHADOW = NO;
+				GCC_WARN_STRICT_SELECTOR_MATCH = NO;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				INSTALL_PATH = /usr/local/lib;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/platform",
+					"$(PROJECT_DIR)",
+				);
+				OTHER_CFLAGS = (
+					"-DDEBUG",
+					"-DTI_POST_1_2",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = co.uk.devpulse.adobemarketingcloud;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Debug;
+		};
+		1DEB922008733DC00010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DSTROOT = /tmp/CoUkDevpulseAdobemarketingcloud.dst;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = CoUkDevpulseAdobemarketingcloud_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "TI_VERSION=$(TI_VERSION)";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = NO;
+				GCC_WARN_MISSING_PARENTHESES = NO;
+				GCC_WARN_SHADOW = NO;
+				GCC_WARN_STRICT_SELECTOR_MATCH = NO;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				INSTALL_PATH = /usr/local/lib;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/platform",
+					"$(PROJECT_DIR)",
+				);
+				OTHER_CFLAGS = "-DTI_POST_1_2";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = co.uk.devpulse.adobemarketingcloud;
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Release;
+		};
+		1DEB922308733DC00010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "libstdc++";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DSTROOT = /tmp/CoUkDevpulseAdobemarketingcloud.dst;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = CoUkDevpulseAdobemarketingcloud_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "TI_VERSION=$(TI_VERSION)";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = NO;
+				GCC_WARN_MISSING_PARENTHESES = NO;
+				GCC_WARN_SHADOW = NO;
+				GCC_WARN_STRICT_SELECTOR_MATCH = NO;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				INSTALL_PATH = /usr/local/lib;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = (
+					"-DDEBUG",
+					"-DTI_POST_1_2",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = co.uk.devpulse.adobemarketingcloud;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Debug;
+		};
+		1DEB922408733DC00010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LIBRARY = "libstdc++";
+				DSTROOT = /tmp/CoUkDevpulseAdobemarketingcloud.dst;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = CoUkDevpulseAdobemarketingcloud_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "TI_VERSION=$(TI_VERSION)";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = NO;
+				GCC_WARN_MISSING_PARENTHESES = NO;
+				GCC_WARN_SHADOW = NO;
+				GCC_WARN_STRICT_SELECTOR_MATCH = NO;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				INSTALL_PATH = /usr/local/lib;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DTI_POST_1_2";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = co.uk.devpulse.adobemarketingcloud;
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Release;
+		};
+		24416B8211C4CA220047AFDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = "Build & test";
+			};
+			name = Debug;
+		};
+		24416B8311C4CA220047AFDD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PRODUCT_NAME = "Build & test";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "AdobeMarketingCloud" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB921F08733DC00010E9CD /* Debug */,
+				1DEB922008733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "AdobeMarketingCloud" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB922308733DC00010E9CD /* Debug */,
+				1DEB922408733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		24416B8A11C4CA520047AFDD /* Build configuration list for PBXAggregateTarget "Build & Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24416B8211C4CA220047AFDD /* Debug */,
+				24416B8311C4CA220047AFDD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0867D690FE84028FC02AAC07 /* Project object */;
+}

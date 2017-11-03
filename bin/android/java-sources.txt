@@ -1,0 +1,2 @@
+"/Users/jayy/Programming/TiModules/AdobeMarketingCloud/android/src/co/uk/devpulse/adobemarketingcloud/AdobeMarketingCloudModule.java"
+"/Users/jayy/Programming/TiModules/AdobeMarketingCloud/android/src/co/uk/devpulse/adobemarketingcloud/ExampleProxy.java"
