@@ -148,5 +148,19 @@
     [_mediaHeartbeat trackError:args];
 }
 
+
+- (void)onBufferStart:(id)args {
+    [_mediaHeartbeat trackEvent:ADBMediaHeartbeatEventBufferStart
+                    mediaObject:nil
+                           data:nil];
+}
+
+
+- (void)onBufferComplete:(id)args {
+    [_mediaHeartbeat trackEvent:ADBMediaHeartbeatEventBufferComplete
+                    mediaObject:nil
+                           data:nil];
+}
+
 @end
 
