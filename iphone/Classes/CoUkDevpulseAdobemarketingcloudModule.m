@@ -69,11 +69,6 @@
 
 #pragma mark Cleanup
 
--(void)dealloc
-{
-	// release any resources that have been retained by the module
-	[super dealloc];
-}
 
 #pragma mark Internal Memory Management
 
@@ -196,7 +191,7 @@
     
     ENSURE_TYPE(playbackTimeCallback, KrollCallback)
     
-    ADBMediaHeartbeatConfig *config = [[[ADBMediaHeartbeatConfig alloc] init] autorelease];
+    ADBMediaHeartbeatConfig *config = [[ADBMediaHeartbeatConfig alloc] init];
     config.trackingServer = trackingServer;
     config.channel = channel;
     config.appVersion = appVersion;
@@ -205,12 +200,12 @@
     config.ssl = [TiUtils boolValue:ssl];
     config.debugLogging = YES;//[TiUtils boolValue:debugLogging];
     
-    VideoAnalyticsProvider *videoAnalytics = [[[VideoAnalyticsProvider alloc] init] autorelease];
+    VideoAnalyticsProvider *videoAnalytics = [[VideoAnalyticsProvider alloc] init];
     videoAnalytics.callback = (KrollCallback *)playbackTimeCallback;
     
-    ADBMediaHeartbeat *mediaHeartbeat = [[[ADBMediaHeartbeat alloc] initWithDelegate:videoAnalytics config:config] autorelease];
+    ADBMediaHeartbeat *mediaHeartbeat = [[ADBMediaHeartbeat alloc] initWithDelegate:videoAnalytics config:config];
     
-    CoUkDevpulseAdobemarketingcloudMediaHeartbeatProxy *proxy = [[[CoUkDevpulseAdobemarketingcloudMediaHeartbeatProxy alloc] init] autorelease];
+    CoUkDevpulseAdobemarketingcloudMediaHeartbeatProxy *proxy = [[CoUkDevpulseAdobemarketingcloudMediaHeartbeatProxy alloc] init];
     proxy.mediaHeartbeat = mediaHeartbeat;
     
     return proxy;
