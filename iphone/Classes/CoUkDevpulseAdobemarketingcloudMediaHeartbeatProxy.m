@@ -191,7 +191,7 @@
         [adObject setValue:metadata forKey:ADBMediaObjectKeyStandardAdMetadata];
     }
     
-    [_mediaHeartbeat trackEvent:ADBMediaHeartbeatEventAdStart mediaObject:adObject data:metadata];
+    [_mediaHeartbeat trackEvent:ADBMediaHeartbeatEventAdStart mediaObject:adObject data:nil];
 }
 
 -(void)onAdComplete:(id)args {
@@ -219,6 +219,7 @@
                     mediaObject:nil
                            data:nil];
 }
+    
 
 @end
 
