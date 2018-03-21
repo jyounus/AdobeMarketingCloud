@@ -24,10 +24,12 @@ import java.util.HashMap;
 import org.appcelerator.titanium.util.TiConvert;
 
 @Kroll.proxy(creatableInModule=AdobeMarketingCloudModule.class)
-public class AdobeMarketingCloudMediaHeartbeatProxy extends KrollProxy implements MediaHeartbeatDelegate
+public class MediaHeartbeatProxy extends KrollProxy implements MediaHeartbeatDelegate
 {
-    public MediaHeartbeat mediaHeartbeat = null;
-
+    private MediaHeartbeat mediaHeartbeat = null;
+    private Double videoProgress = 0.0; 
+    
+    
     private void log(String text) {
         Log.d("AdobeMarketingCloudMediaHeartbeatProxy", text);
     }
@@ -49,11 +51,10 @@ public class AdobeMarketingCloudMediaHeartbeatProxy extends KrollProxy implement
     }
 
     @Override
-	public void applyProperties(Object args) {
-    	log("createMediaHeartbeatObject called");
- 
-    	KrollDict props = (KrollDict)args;
-		String trackingServer = TiConvert.toString(props.get("trackingServer"));
+    public void handleCreationDict(KrollDict props) {
+    	log("createMediaHeartbeat called");
+   
+    	String trackingServer = TiConvert.toString(props.get("trackingServer"));
 	    String channel = TiConvert.toString(props.get("channel"));
 	    String appVersion = TiConvert.toString(props.get("appVersion"));
 	    String ovp = TiConvert.toString(props.get("ovp"));
@@ -95,6 +96,7 @@ public class AdobeMarketingCloudMediaHeartbeatProxy extends KrollProxy implement
     public void trackSessionEnd() {
         log("Inside trackSessionEnd");
         mediaHeartbeat.trackSessionEnd();
+        videoProgress = 0.0;
     }
 
     @Kroll.method
@@ -177,6 +179,12 @@ public class AdobeMarketingCloudMediaHeartbeatProxy extends KrollProxy implement
         mediaHeartbeat.trackError(args);
     }
     
+    @Kroll.method
+    @Kroll.setProperty
+    public void setVideoProgress(Double progress) {
+    	videoProgress = (Double)progress;
+    }
+    
     
     //******* MediaHeartbeatDelegate ****
     
@@ -188,16 +196,9 @@ public class AdobeMarketingCloudMediaHeartbeatProxy extends KrollProxy implement
     @Override
     public Double getCurrentPlaybackTime() {
     	
-    	Object progressVal = this.getProperty("videoProgress");
-    	if (progressVal == null) {
-    		return 0.0;
-    	}
+    	log(String.format("getCurrentPlaybackTime: %f", videoProgress));
     	
-    	double progress = TiConvert.toDouble(progressVal);
-    	
-    	log(String.format("progress: %f", progress));
-    	
-        return progress;
+        return videoProgress;
     }
     
 }
