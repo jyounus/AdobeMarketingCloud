@@ -2,30 +2,34 @@ package co.uk.devpulse.adobemarketingcloud;
 
 import org.appcelerator.kroll.KrollModule;
 import org.appcelerator.kroll.annotations.Kroll;
-
 import org.appcelerator.titanium.TiApplication;
 import org.appcelerator.kroll.common.Log;
 import org.appcelerator.kroll.common.TiConfig;
 
 import android.app.Activity;
+
 import org.appcelerator.kroll.KrollDict;
+import org.appcelerator.kroll.KrollFunction;
 import org.appcelerator.kroll.KrollProxy;
 
 import com.adobe.primetime.va.simple.MediaHeartbeat;
 import com.adobe.primetime.va.simple.MediaHeartbeat.MediaHeartbeatDelegate;
 import com.adobe.primetime.va.simple.MediaHeartbeatConfig;
 import com.adobe.primetime.va.simple.MediaObject;
+
 import org.appcelerator.kroll.*;
+
 import java.util.HashMap;
+
 import org.appcelerator.titanium.util.TiConvert;
 
 @Kroll.proxy(creatableInModule=AdobeMarketingCloudModule.class)
-public class AdobeMarketingCloudMediaHeartbeatProxy extends KrollProxy
+public class AdobeMarketingCloudMediaHeartbeatProxy extends KrollProxy implements MediaHeartbeatDelegate
 {
     public MediaHeartbeat mediaHeartbeat = null;
 
     private void log(String text) {
-        Log.d("AdobeMarketingCloudModule", text);
+        Log.d("AdobeMarketingCloudMediaHeartbeatProxy", text);
     }
 
     private HashMap<String, Object> toHashMap(Object data) {
@@ -40,10 +44,37 @@ public class AdobeMarketingCloudMediaHeartbeatProxy extends KrollProxy
         if (data != null) {
             return (HashMap<String, String>)data;
         }
-
+                
         return null;
     }
 
+    @Override
+	public void applyProperties(Object args) {
+    	log("createMediaHeartbeatObject called");
+ 
+    	KrollDict props = (KrollDict)args;
+		String trackingServer = TiConvert.toString(props.get("trackingServer"));
+	    String channel = TiConvert.toString(props.get("channel"));
+	    String appVersion = TiConvert.toString(props.get("appVersion"));
+	    String ovp = TiConvert.toString(props.get("ovp"));
+	    String playerName = TiConvert.toString(props.get("playerName"));
+	    Boolean ssl = TiConvert.toBoolean(props.get("ssl"));
+	    Boolean debugLogging = TiConvert.toBoolean(props.get("debugLogging"));
+
+		MediaHeartbeatConfig config = new MediaHeartbeatConfig();
+        config.trackingServer = trackingServer;
+        config.channel = channel;
+        config.appVersion = appVersion;
+        config.ovp = ovp;
+        config.playerName = playerName;
+        config.ssl = ssl;
+        config.debugLogging = debugLogging;
+
+        mediaHeartbeat = new MediaHeartbeat(this, config);
+        
+    }
+    
+    
     @Kroll.method
     public void trackSessionStart(KrollDict args) {
         log("Inside trackSessionStart");
@@ -56,7 +87,8 @@ public class AdobeMarketingCloudMediaHeartbeatProxy extends KrollProxy
         Double length = TiConvert.toDouble(basic.get("length"));
 
         MediaObject mediaInfo = MediaHeartbeat.createMediaObject(name, mediaId, length, MediaHeartbeat.StreamType.VOD);
-        mediaHeartbeat.trackSessionStart(mediaInfo, metadata); // TODO: we're not doing anything with the 'custom' HashMap, is this correct?
+        mediaInfo.setValue(MediaHeartbeat.MediaObjectKey.StandardVideoMetadata, metadata);
+        mediaHeartbeat.trackSessionStart(mediaInfo, custom);
     }
 
     @Kroll.method
@@ -126,4 +158,28 @@ public class AdobeMarketingCloudMediaHeartbeatProxy extends KrollProxy
         log("Inside onError");
         mediaHeartbeat.trackError(args);
     }
+    
+    
+    //******* MediaHeartbeatDelegate ****
+    
+    @Override
+    public MediaObject getQoSObject() {
+        return null;
+    }
+
+    @Override
+    public Double getCurrentPlaybackTime() {
+    	
+    	Object progressVal = this.getProperty("videoProgress");
+    	if (progressVal == null) {
+    		return 0.0;
+    	}
+    	
+    	double progress = TiConvert.toDouble(progressVal);
+    	
+    	log(String.format("progress: %f", progress));
+    	
+        return progress;
+    }
+    
 }
