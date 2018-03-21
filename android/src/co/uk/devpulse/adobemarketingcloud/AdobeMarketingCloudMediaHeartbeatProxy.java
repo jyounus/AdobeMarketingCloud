@@ -92,7 +92,7 @@ public class AdobeMarketingCloudMediaHeartbeatProxy extends KrollProxy implement
     }
 
     @Kroll.method
-    public void trackSessionEnd() { // had to remove the KrollDict args param, UNLIKE on iOS!!! if you keep the args, you MUST make sure on Ti you pass an object as well.
+    public void trackSessionEnd() {
         log("Inside trackSessionEnd");
         mediaHeartbeat.trackSessionEnd();
     }
@@ -126,30 +126,48 @@ public class AdobeMarketingCloudMediaHeartbeatProxy extends KrollProxy implement
         log("Inside onComplete");
         mediaHeartbeat.trackComplete();
     }
+    
+    @Kroll.method
+    public void onAdBreakStart(KrollDict args) {
+        log("Inside onAdBreakStart");
+
+        String name = TiConvert.toString(args.get("name"));	//ad type (e.g. "preroll", "midroll", etc.)
+        Double startTime = TiConvert.toDouble(args.get("startTime"));
+        Double position = TiConvert.toDouble(args.get("position"));
+
+        MediaObject adBreakObject = MediaHeartbeat.createAdBreakObject(name, position.longValue(), startTime);
+        
+        mediaHeartbeat.trackEvent(MediaHeartbeat.Event.AdBreakStart, adBreakObject, null);
+    }
+
+    
 
     @Kroll.method
     public void onAdStart(KrollDict args) {
         log("Inside onAdStart");
-        HashMap<String, Object> basic = toHashMap(args.get("basic"));
         HashMap<String, String> metadata = toStringHashMap(args.get("metadata"));
-        HashMap<String, String> custom = toStringHashMap(args.get("custom"));
 
-        String name = TiConvert.toString(basic.get("name"));
-        String adId = TiConvert.toString(basic.get("id"));
-        Double time = TiConvert.toDouble(basic.get("time"));
-        Double position = TiConvert.toDouble(basic.get("position"));
+        String name = TiConvert.toString(args.get("name")); 
+        String adId = TiConvert.toString(args.get("adId"));
+        Double length = TiConvert.toDouble(args.get("length"));
+        Double position = TiConvert.toDouble(args.get("position"));
 
-        MediaObject adBreakObject = MediaHeartbeat.createAdBreakObject(name, position.longValue(), time);
-        MediaObject adInfo = MediaHeartbeat.createAdObject(name, adId, position.longValue(), time);
-
-        mediaHeartbeat.trackEvent(MediaHeartbeat.Event.AdBreakStart, adBreakObject, null);
-        mediaHeartbeat.trackEvent(MediaHeartbeat.Event.AdStart, adInfo, metadata); // TODO: again not using 'custom' HashMap, is this correct?
+        MediaObject adInfo = MediaHeartbeat.createAdObject(name, adId, position.longValue(), length);
+        adInfo.setValue(MediaHeartbeat.MediaObjectKey.StandardAdMetadata, metadata);
+        mediaHeartbeat.trackEvent(MediaHeartbeat.Event.AdStart, adInfo, null);
     }
 
+    
     @Kroll.method
     public void onAdComplete() {
         log("Inside onAdComplete");
         mediaHeartbeat.trackEvent(MediaHeartbeat.Event.AdComplete, null, null);
+    }
+    
+    
+    @Kroll.method
+    public void onAdBreakComplete() {
+        log("Inside onAdBreakComplete");
         mediaHeartbeat.trackEvent(MediaHeartbeat.Event.AdBreakComplete, null, null);
     }
 
