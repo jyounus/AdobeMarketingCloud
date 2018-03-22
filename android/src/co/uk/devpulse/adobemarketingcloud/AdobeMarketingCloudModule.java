@@ -133,36 +133,4 @@ public class AdobeMarketingCloudModule extends KrollModule
 		Analytics.trackAction(name, dataDict);
 	}
 
-	@Kroll.method
-	public AdobeMarketingCloudMediaHeartbeatProxy createMediaHeartbeatObject(KrollDict args) {
-		Log.d(LCAT, "createMediaHeartbeatObject called");
-
-		String trackingServer = TiConvert.toString(args.get("trackingServer"));
-	    String channel = TiConvert.toString(args.get("channel"));
-	    String appVersion = TiConvert.toString(args.get("appVersion"));
-	    String ovp = TiConvert.toString(args.get("ovp"));
-	    String playerName = TiConvert.toString(args.get("playerName"));
-	    Boolean ssl = TiConvert.toBoolean(args.get("ssl"));
-	    Boolean debugLogging = TiConvert.toBoolean(args.get("debugLogging"));
-	    KrollFunction playbackTimeCallback = (KrollFunction)args.get("playbackTimeCallback");
-
-		MediaHeartbeatConfig config = new MediaHeartbeatConfig();
-        config.trackingServer = trackingServer;
-        config.channel = channel;
-        config.appVersion = appVersion;
-        config.ovp = ovp;
-        config.playerName = playerName;
-        config.ssl = ssl;
-        config.debugLogging = debugLogging;
-
-		AdobeMarketingCloudVideoAnalyticsProvider videoAnalytics = new AdobeMarketingCloudVideoAnalyticsProvider();
-		videoAnalytics.playbackCallback = playbackTimeCallback;
-
-        MediaHeartbeat heartbeat = new MediaHeartbeat(videoAnalytics, config);
-
-		AdobeMarketingCloudMediaHeartbeatProxy proxy = new AdobeMarketingCloudMediaHeartbeatProxy();
-		proxy.mediaHeartbeat = heartbeat;
-
-		return proxy;
-	}
 }

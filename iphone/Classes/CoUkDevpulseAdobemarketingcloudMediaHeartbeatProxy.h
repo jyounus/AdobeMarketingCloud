@@ -11,7 +11,6 @@
 #import "ADBMediaHeartbeatConfig.h"
 
 @interface CoUkDevpulseAdobemarketingcloudMediaHeartbeatProxy : TiProxy
-@property (nonatomic, strong) ADBMediaHeartbeat* mediaHeartbeat;
 
 -(void)trackSessionStart:(id)args;
 -(void)trackSessionEnd:(id)args;

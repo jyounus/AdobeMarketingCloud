@@ -28,7 +28,6 @@
 #import "ADBMediaHeartbeat.h"
 #import "ADBMediaHeartbeatConfig.h"
 #import "CoUkDevpulseAdobemarketingcloudMediaHeartbeatProxy.h"
-#import "VideoAnalyticsProvider.h"
 
 @implementation CoUkDevpulseAdobemarketingcloudModule
 
@@ -53,7 +52,7 @@
 	// this method is called when the module is first loaded
 	// you *must* call the superclass
 	[super startup];
-
+    
 	NSLog(@"[INFO] %@ loaded",self);
 }
 
@@ -67,13 +66,7 @@
 	[super shutdown:sender];
 }
 
-#pragma mark Cleanup
 
--(void)dealloc
-{
-	// release any resources that have been retained by the module
-	[super dealloc];
-}
 
 #pragma mark Internal Memory Management
 
@@ -170,51 +163,6 @@
     [ADBMobile trackAction:name data:data];
 }
 
-
-
--(id)createMediaHeartbeatObject:(id)args {
-    [self log:@"Inside createMediaHeartbeatObject"];
-    ENSURE_SINGLE_ARG(args, NSDictionary);
-    
-    id trackingServer = [args objectForKey:@"trackingServer"];
-    id channel = [args objectForKey:@"channel"];
-    id appVersion = [args objectForKey:@"appVersion"];
-    id ovp = [args objectForKey:@"ovp"];
-    id playerName = [args objectForKey:@"playerName"];
-    id ssl = [args objectForKey:@"ssl"];
-    id debugLogging = [args objectForKey:@"debugLogging"];
-    
-    id playbackTimeCallback = [args objectForKey:@"playbackTimeCallback"];
-    
-    ENSURE_STRING(trackingServer)
-    ENSURE_STRING(channel)
-    ENSURE_STRING(appVersion)
-    ENSURE_STRING(ovp)
-    ENSURE_STRING(playerName)
-    ENSURE_TYPE(ssl, NSNumber)
-    ENSURE_TYPE(debugLogging, NSNumber)
-    
-    ENSURE_TYPE(playbackTimeCallback, KrollCallback)
-    
-    ADBMediaHeartbeatConfig *config = [[[ADBMediaHeartbeatConfig alloc] init] autorelease];
-    config.trackingServer = trackingServer;
-    config.channel = channel;
-    config.appVersion = appVersion;
-    config.ovp = ovp;
-    config.playerName = playerName;
-    config.ssl = [TiUtils boolValue:ssl];
-    config.debugLogging = YES;//[TiUtils boolValue:debugLogging];
-    
-    VideoAnalyticsProvider *videoAnalytics = [[[VideoAnalyticsProvider alloc] init] autorelease];
-    videoAnalytics.callback = (KrollCallback *)playbackTimeCallback;
-    
-    ADBMediaHeartbeat *mediaHeartbeat = [[[ADBMediaHeartbeat alloc] initWithDelegate:videoAnalytics config:config] autorelease];
-    
-    CoUkDevpulseAdobemarketingcloudMediaHeartbeatProxy *proxy = [[[CoUkDevpulseAdobemarketingcloudMediaHeartbeatProxy alloc] init] autorelease];
-    proxy.mediaHeartbeat = mediaHeartbeat;
-    
-    return proxy;
-}
 
 
 @end
